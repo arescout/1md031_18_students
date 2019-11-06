@@ -1,10 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Page title shown in window title</title>
-    <meta charset="utf-8"/>
-</head>
-<body>
+    <head>
+        <title>Page title shown in window title</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body>
+        <main>
+            <h1>Välkommen till BurgerOnline</h1>
+            <section>
+                <h2> Select burger </h2>
+                <div> This is where you choose your burger</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>the Hipster-Hallouim Burger</th>
+                            <th>Burger 2</th>
+                            <th>Burger 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><img src="http://www.healthyfood.co.uk/wp-content/uploads/2016/06/Sprout-burger.jpg" alt="Halloumi Burger" title="Hipster Halloumi burger" width="200"></td>
+                            <td><img src="http://misplacedbrit.com/wp-content/uploads/2014/06/IMG_8236.jpg" alt="Halloumi Burger" title="Eggplant Burger" width="200"></td>
+                            <td><img src="https://fiitstyle.com/wp-content/uploads/2017/05/18361591_523757921346866_328414952_n.jpg" alt="Falafel and Halloumi Burger" title="Hipster Halloumi burger" width="200"></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <dl>
+                                    <dt>Protein</dt>
+                                    <dd>Halloumi</dd>
 
-</body>
+                                    <dt>Allergies</dt>
+                                    <dd>Milk protein</dd>
+                                    <dd>Lactose</dd>
+                                    <dd>Gluten</dd>
+                                    <dd>Cucumber</dd>
+                                    <dd>Pepper</dd>
+                                    <dd>Gaspacho</dd>
+                                </dl>
+                            </td>
+                            <td>
+                                <dl>
+                                    <dt>Protein</dt>
+                                    <dd>Halloumi</dd>
+
+                                    <dt>Allergies</dt>
+                                    <dd>Milk protein</dd>
+                                    <dd>Lactose</dd>
+                                    <dd>Gluten</dd>
+                                    <dd>Cucumber</dd>
+                                    <dd>Pepper</dd>
+                                    <dd>Gaspacho</dd>
+                                </dl>
+                            <td>
+                                <dl>
+                                    <dt>Protein</dt>
+                                    <dd>Halloumi</dd>
+
+                                    <dt>Allergies</dt>
+                                    <dd>Milk protein</dd>
+                                    <dd>Lactose</dd>
+                                    <dd>Gluten</dd>
+                                    <dd>Cucumber</dd>
+                                    <dd>Pepper</dd>
+                                    <dd>Gaspacho</dd>
+                                </dl>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </section>
+            <section>
+                <h2> Customer information</h2>
+                <div> Here will the customer's information be displayed </div>
+                <h3>Delivery information:</h3>
+                <p>
+                    <label for="customer name">Full name</label></br>
+                    <input type="text" id="customer name" name="cn" required="required" placeholder="Your full name">
+                </p>
+                <p>
+                    <label for="customer email">E-mail</label></br>
+                    <input type="email" id="customer email" name="ce" required="required" placeholder="Your e-mail">
+                </p>
+                <p>
+                    <label for="customer address">Delivery address</label></br>
+                    <input type="text" id="customer address" name="ca" required="required" placeholder="Your delivery address">
+                </p>
+                <p>
+                    <label for="customer phone">Phone number</label></br>
+                    <input type="number" id="customer phone" name="cp" required="required" placeholder="Your phone number">
+                </p>
+                <p>
+                    <label for="payment method">Payment method</label></br>
+                    <select id="payment method" name="pm">
+                        <option>Swish</option>
+                        <option>Klarna</option>
+                        <option>Credit card</option>
+                        <option>Invoice</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="additional information">Additional information</label></br>
+                    <textarea id="additional information" rows="5" placeholder="Additional information, eg. floor or entry code"></textarea>
+                </p>
+                <p>
+                    <label for="customer gender">Gender</label></br>
+                    <label for="gender male">Male</label>
+                    <input type="radio" id="gender male">
+                    <label for="gender female">Female</label>
+                    <input type="radio" id="gender female">
+                </p>
+            </section>
+        </main>
+    </body>
+    <footer>
+        Hippo-Burger TM
+    </footer>
 </html>
