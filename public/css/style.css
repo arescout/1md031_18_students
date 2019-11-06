@@ -1,0 +1,23 @@
+/* This is how one comments in css*/
+/* Priority goes type selector/pseudo-element < class selector/attribute selector/pseudo-class < ID*/
+
+@import "https://fonts.googleapis.com/css?family=Pacifico|Dosis";
+
+body {
+    font-family: "Times New Roman", sans-serif;
+    font-size: 1.2em;
+}
+.allergies {
+    text-transform: uppercase;
+}
+
+.allergies_header {
+    text-decoration: underline;
+}
+
+button:hover {
+    color:blueviolet;
+    cursor:pointer;
+}
+
+
