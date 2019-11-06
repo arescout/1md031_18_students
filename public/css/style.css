@@ -15,9 +15,25 @@ body {
     text-decoration: underline;
 }
 
+button {
+    margin-bottom: 10px;
+}
+
 button:hover {
     color:blueviolet;
     cursor:pointer;
+}
+
+table {
+    width: 75%;
+    alignment: right;
+    margin-top: 10px;
+}
+
+section {
+    margin: 10px;
+    padding-left: 10px;
+    border: 2px dotted;
 }
 
 
