@@ -2,89 +2,84 @@
 <!-- This is how one comments in HTML-->
 <html lang="en">
     <head>
-        <title>Page title shown in window title</title>
+        <title>!!</title>
         <meta charset="utf-8"/>
         <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/reset.css" >
         <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/style.css" >
     </head>
     <body>
         <main>
-            <h1>Välkommen till BurgerOnline</h1>
-            <section>
+            <header>
+
+                <img src="http://localhost:3000/img/header_image.jpg" alt="row of taps">
+                <h1>Välkommen till BurgerOnline</h1>
+            </header>
+            <section class="burger_selection">
                 <h2> Select burger </h2>
                 <div> This is where you choose your burger</div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>the Hipster-Hallouim Burger</th>
-                            <th>Burger 2</th>
-                            <th>Burger 3</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><img src="http://www.healthyfood.co.uk/wp-content/uploads/2016/06/Sprout-burger.jpg" alt="Halloumi Burger" title="Hipster Halloumi burger" width="200"></td>
-                            <td><img src="http://misplacedbrit.com/wp-content/uploads/2014/06/IMG_8236.jpg" alt="Halloumi Burger" title="Eggplant Burger" width="200"></td>
-                            <td><img src="https://fiitstyle.com/wp-content/uploads/2017/05/18361591_523757921346866_328414952_n.jpg" alt="Falafel and Halloumi Burger" title="Hipster Halloumi burger" width="200"></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <dl>
-                                    <dt>Protein</dt>
-                                    <dd>Halloumi</dd>
+                <div class="wrapper">
+                    <div class="box a">
+                        <p>the Hipster-Halloumi Burger</p>
+                        <img src="http://www.healthyfood.co.uk/wp-content/uploads/2016/06/Sprout-burger.jpg" alt="Halloumi Burger" title="Hipster Halloumi burger">
+                        <p class="protein_header">Protein</p>
+                        <p class="protein">Halloumi</p>
+                        </br>
+                        <p class="allergies_header">Allergies</p>
+                        <span class="allergies">
+                            <p>Milk protein</p>
+                            <p>Lactose</p>
+                            <p>Gluten</p>
+                            <p>Cucumber</p>
+                            <p>Pepper</p>
+                            <p>Gaspacho</p>
+                        </span>
+                    </div>
 
-                                    <dt class="allergies_header">Allergies</dt>
-                                    <span class="allergies">
-                                    <dd>Milk protein</dd>
-                                    <dd>Lactose</dd>
-                                    <dd>Gluten</dd>
-                                    <dd>Cucumber</dd>
-                                    <dd>Pepper</dd>
-                                        <dd>Gaspacho</dd>
-                                    </span>
-                                </dl>
-                            </td>
-                            <td>
-                                <dl>
-                                    <dt>Protein</dt>
-                                    <dd>Halloumi</dd>
+                    <div class="box b">
+                        <p>Eggplant burger</p>
+                        <img src="http://misplacedbrit.com/wp-content/uploads/2014/06/IMG_8236.jpg" alt="Halloumi Burger" title="Eggplant Burger">
+                        <p class="protein_header">Protein</p>
+                        <span class="protein">
+                            <p>Halloumi</p>
+                            <p>Eggplant</p>
+                        </span>
+                        </br>
+                        <p class="allergies_header">Allergies</p>
+                        <span class="allergies">
+                            <p>Milk protein</p>
+                            <p>Lactose</p>
+                            <p>Gluten</p>
+                            <p>Cucumber</p>
+                            <p>Pepper</p>
+                            <p>Eggplant</p>
+                        </span>
+                    </div>
 
-                                    <dt class="allergies_header">Allergies</dt>
-                                    <span class="allergies">
-                                    <dd>Milk protein</dd>
-                                    <dd>Lactose</dd>
-                                    <dd>Gluten</dd>
-                                    <dd>Cucumber</dd>
-                                    <dd>Pepper</dd>
-                                    <dd>Gaspacho</dd>
-                                    </span>
-                                </dl>
-                            <td>
-                                <dl>
-                                    <dt>Protein</dt>
-                                    <dd>Halloumi</dd>
-
-                                    <dt class="allergies_header">Allergies</dt>
-                                    <span class="allergies">
-                                    <dd>Milk protein</dd>
-                                    <dd>Lactose</dd>
-                                    <dd>Gluten</dd>
-                                    <dd>Cucumber</dd>
-                                    <dd>Pepper</dd>
-                                    <dd>Gaspacho</dd>
-                                    </span>
-                                </dl>
-                            </td>
-                        </tr>
-
-                    </tbody>
-                </table>
+                    <div class="box c">
+                        <p>Falafel-Halloumi Burger</p>
+                        <img src="https://fiitstyle.com/wp-content/uploads/2017/05/18361591_523757921346866_328414952_n.jpg" alt="Falafel and Halloumi Burger" title="Hipster Halloumi burger">
+                        <p class="protein_header">Protein</p>
+                        <span class="protein">
+                            <p>Halloumi</p>
+                            <p>Chick pea</p>
+                        </span>
+                        </br>
+                        <p class="allergies_header">Allergies</p>
+                        <span class="allergies">
+                            <p>Milk protein</p>
+                            <p>Lactose</p>
+                            <p>Gluten</p>
+                            <p>Cucumber</p>
+                            <p>Pepper</p>
+                            <p>Chick pea</p>
+                        </span>
+                    </div>
+                </div>
             </section>
             <section>
                 <h2> Customer information</h2>
-                <div> Here will the customer's information be displayed </div>
+                <p> Please fill out the following form: </p>
                 <form>
-                <h3>Delivery information:</h3>
                 <p>
                     <label for="customer name">Full name</label></br>
                     <input type="text" id="customer name" name="cn" required="required" placeholder="Your full name">
@@ -129,10 +124,9 @@
 
 
                 </form>
-                <button type="submit"><img src="https://image.shutterstock.com/image-vector/drugs-motorbike-delivery-long-shadow-260nw-379459486.jpg"
-                width="20"> Place your order</button>
-
             </section>
+            <button type="submit"><img src="https://image.shutterstock.com/image-vector/drugs-motorbike-delivery-long-shadow-260nw-379459486.jpg"
+                                       width="20"> Place your order</button>
         </main>
     </body>
     <footer>
