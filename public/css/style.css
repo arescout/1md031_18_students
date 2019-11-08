@@ -102,6 +102,11 @@ footer {
     grid-column: 1;
 }
 
+.box > p {
+    margin-bottom: 1em;
+    color: red;
+}
+
 .b {
     grid-column: 2;
 }
