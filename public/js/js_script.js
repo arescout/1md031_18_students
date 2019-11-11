@@ -1,9 +1,11 @@
-function MenuItem (name, kCal, cG, cL, iV) {
+function MenuItem (name, kCal, cG, cL, iV, src, box) {
     this.name = name + " burger";
     this.kCal = kCal;
     this.contGluten = cG;
     this.contLactose = cL;
     this.isVegan = iV;
+    this.image = src;
+    this.box = "box " + box;
 
     this.kCalCheck = function () {
         return [this.name + " is " + this.kCal + " kCal."].toString();
@@ -11,16 +13,108 @@ function MenuItem (name, kCal, cG, cL, iV) {
 
     this.onTheMenu = function() {
         return [
-           this.name + "\n " +
-           this.kCal + " kCal \n " +
-           "Contains: " + "Gluten -" + this.contGluten+ " Lactose -" + this.contLactose + " \n " +
-           "Is Vegan: " + this.isVegan
+            this.name + "\n " +
+            this.kCal + " kCal \n " +
+            "Contains: " + "Gluten -" + this.contGluten+ " Lactose -" + this.contLactose + " \n " +
+            "Is Vegan: " + this.isVegan
         ].toString();
     };
+
+    this.condMenu = function() {
+        var txt = this.name;
+        if(this.contGluten) {
+            txt = txt + ", contains Gluten";
+        }
+        if(this.contLactose){
+            txt = txt + ", contains Lactose";
+        }
+        if(this.isVegan){
+            txt = txt + ", is Vegan";
+        }
+        txt = txt + '.';
+        return txt;
+    };
+
 }
 
-let hipsterHalloumi = new MenuItem("the Hipster-Halloumi", 3000, true, true, false );
-console.log(hipsterHalloumi.kCalCheck());
+/* Create main div for burger selection */
+let burgerSelection = document.getElementsByClassName("burger_selection");
+
+/* Create array of burgers */
+let burgers = [new MenuItem("the Hipster-Halloumi", 2500, true,false,false,"http://www.healthyfood.co.uk/wp-content/uploads/2016/06/Sprout-burger.jpg", "a"),
+                new MenuItem("the Eggplant", 2000, true, false, false, "http://misplacedbrit.com/wp-content/uploads/2014/06/IMG_8236.jpg", "b"),
+                new MenuItem("the Falafel-Halloumi", 5000, true, true, false,"https://fiitstyle.com/wp-content/uploads/2017/05/18361591_523757921346866_328414952_n.jpg", "c"),
+                new MenuItem("the Meat-is-not-murder", 5000, false, true, true,"http://wallpapersdsc.net/wp-content/uploads/2016/09/Burger-Images.jpg", "d"),
+                new MenuItem("the Ordinary", 3000, true, true, true, "https://static.beburger.be/img/home/intro-bg.jpg", "e")
+                ];
+
+
+
+/**
+// Create and add wrapper div
+let wrapper = document.createElement('div');
+wrapper.setAttribute('class','wrapper');
+burgerSelection[0].appendChild(wrapper);
+
+// Add burgers
+let i = 0;
+for(let item in burgers){
+
+    // Create box div
+    let box = document.createElement('div');
+    box.setAttribute('class','box ' + String.fromCharCode((97+i)));
+
+    // Add burger name
+    let burgerNameNode = document.createElement('p');
+    burgerNameNode.innerHTML = burgers[item].name;
+    box.appendChild(burgerNameNode);
+
+    // Add image
+    let burgerImgNode = document.createElement('img');
+    burgerImgNode.setAttribute('src',burgers[item].image);
+    burgerImgNode.setAttribute('alt', "Picture of " + burgers[item].name);
+    box.appendChild(burgerImgNode);
+
+    // Add protein
+    let brgrPrtnTtleNode = document.createElement('p');
+    brgrPrtnTtleNode.setAttribute('class','protein_title');
+    brgrPrtnTtleNode.innerHTML = "Protein";
+    box.appendChild(brgrPrtnTtleNode);
+
+    let brgrPrtnNode =  document.createElement('span');
+    brgrPrtnNode.setAttribute('class','protein');
+    brgrPrtnNode.innerHTML = "Halloumi";
+    box.appendChild(brgrPrtnNode);
+
+    // Add allergies and preferences
+    let brgrAllrgsTitleNode = document.createElement('p');
+    brgrAllrgsTitleNode.setAttribute('class','allergies_header');
+    brgrAllrgsTitleNode.innerHTML = "Allergies and preferences";
+    box.appendChild(brgrAllrgsTitleNode);
+
+    let brgrAllrgsNode = document.createElement('span');
+    brgrAllrgsNode.setAttribute('class','allergies');
+    if (burgers[item].contGluten) {
+        let glutenNode = document.createElement('p');
+        glutenNode.innerHTML = "Contains Gluten";
+        brgrAllrgsNode.appendChild(glutenNode);
+    } if (burgers[item].contLactose){
+        let lactoseNode = document.createElement('p');
+        lactoseNode.innerHTML = "Contains Lactose";
+        brgrAllrgsNode.appendChild(lactoseNode)
+    } if (burgers[item].isVegan){
+        let veganNode = document.createElement('p');
+        veganNode.innerHTML = "Is Vegan";
+        brgrAllrgsNode.appendChild(veganNode);
+    }
+    box.appendChild(brgrAllrgsNode);
+
+    // Finish by adding the box to wrapper
+    wrapper.appendChild(box);
+    i++;
+}
+console.log(wrapper); */
+
 
 /* JSFiddle code for task 4-6
 const halloumiBurger = new MenuItem("the Hipster-Halloumi", 3000, true, true, false);
@@ -103,3 +197,4 @@ function MenuItem (name, kCal, cG, cL, iV) {
         ].toString();
     };
 } **/
+

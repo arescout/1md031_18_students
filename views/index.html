@@ -7,8 +7,8 @@
         <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/reset.css" >
         <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/style.css" >
         <script src="https://vuejs.org/js/vue.js"></script>
-        <script src="http://localhost:3000/js/js_script.js"></script>
-        <script src="http://localhost:3000/js/vue_script.js"></script>
+        <script src="http://localhost:3000/js/js_script.js" defer></script>
+        <script src="http://localhost:3000/js/vue_script.js" defer></script>
     </head>
     <body>
         <main>
@@ -20,7 +20,21 @@
             <section class="burger_selection">
                 <h2> Select burger </h2>
                 <div> This is where you choose your burger</div>
-                <div class="wrapper">
+                <div class="wrapper" id="burgerWrapper">
+                    <div v-for="burger in burgers" class={{burger.box}}>
+                        <p>{{burger.name}}</p>
+                        <img src={{burger.image}} alt="En bild">
+                        <p class="protein_header">Protein</p>
+                        <span class="protein_header">
+                            <p>Halloumi</p>
+                        </span>
+                        <p>Allergies and preferences</p>
+                        <p v-if="{{burger.contGluten}}">Includes Gluten</p>
+                    </div>
+
+                </div>
+
+                <!--<div class="wrapper">
                     <div class="box a">
                         <p>the Hipster-Halloumi Burger</p>
                         <img src="http://www.healthyfood.co.uk/wp-content/uploads/2016/06/Sprout-burger.jpg" alt="Halloumi Burger" title="Hipster Halloumi burger">
@@ -79,7 +93,7 @@
                             <p>Chick pea</p>
                         </span>
                     </div>
-                </div>
+                </div>-->
             </section>
             <section>
                 <h2> Customer information</h2>
