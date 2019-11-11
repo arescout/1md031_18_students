@@ -4,35 +4,53 @@
     <head>
         <title>!!</title>
         <meta charset="utf-8"/>
+
         <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/reset.css" >
         <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/style.css" >
+
         <script src="https://vuejs.org/js/vue.js"></script>
+
+        <script type="text/javascript" src="http://localhost:3000/js/menu.js"></script>
+
         <script src="http://localhost:3000/js/js_script.js" defer></script>
         <script src="http://localhost:3000/js/vue_script.js" defer></script>
     </head>
     <body>
-        <main>
+        <main id="main">
             <header>
 
                 <img src="http://localhost:3000/img/header_image.jpg" alt="row of taps">
                 <h1>Välkommen till BurgerOnline</h1>
             </header>
+            <!-- Burger Selection -->
             <section class="burger_selection">
                 <h2> Select burger </h2>
                 <div> This is where you choose your burger</div>
-                <div class="wrapper" id="burgerWrapper">
-                    <div v-for="burger in burgers" class={{burger.box}}>
-                        <p>{{burger.name}}</p>
-                        <img src={{burger.image}} alt="En bild">
+
+                <!-- Vue HTML code starts here -->
+                <template v-if="showVue" id="burgerWrapper">
+                <div class="wrapper" >
+                    <div v-for="burger in burgers" :class="burger.box">
+                        <p>
+                            <input type="radio" name="burgerSelector" :value="burger.name">
+                            {{burger.name}}
+                        </p>
+                        <img :src="burger.image" :alt="burger.imgAlt">
                         <p class="protein_header">Protein</p>
                         <span class="protein_header">
                             <p>Halloumi</p>
                         </span>
-                        <p>Allergies and preferences</p>
-                        <p v-if="{{burger.contGluten}}">Includes Gluten</p>
+                        <p class="allergies_header">Allergies and preferences</p>
+                        <span class="allergies">
+                            <p v-if="burger.contGluten">Includes Gluten</p>
+                            <p v-if="burger.contLactose">Includes Lactose</p>
+                            <p v-if="burger.isVegan">Is Vegan</p>
+                        </span>
                     </div>
 
                 </div>
+                </template>
+
 
                 <!--<div class="wrapper">
                     <div class="box a">
@@ -95,6 +113,8 @@
                     </div>
                 </div>-->
             </section>
+
+            <!-- User input -->
             <section>
                 <h2> Customer information</h2>
                 <p> Please fill out the following form: </p>
@@ -129,23 +149,30 @@
                     <textarea id="additional information" rows="5" placeholder="Additional information, eg. floor or entry code"></textarea>
                 </p>
                 <p>
-
                     <label for="customer gender">Gender</label></br>
-                    <input type="radio" id="gender male" name="cg">
+                    <input type="radio" id="gender male" name="cg" value="male">
                     <label for="gender male">Male</label></br>
-                    <input type="radio" id="gender female" name="cg">
+                    <input type="radio" id="gender female" name="cg" value="female">
                     <label for="gender female">Female</label></br>
-                    <input type="radio" id="gender nonbinary" name="cg">
+                    <input type="radio" id="gender nonbinary" name="cg" value="nonbinary">
                     <label for="gender nonbinary">Non-binary</label></br>
-                    <input type="radio" id="gender undisc" checked="checked" name="cg">
+                    <input type="radio" id="gender undisc" checked="checked" name="cg" value="undisclosed">
                     <label for="gender undisc">Undisclosed</label>
                 </p>
 
 
                 </form>
             </section>
-            <button type="submit"><img src="https://image.shutterstock.com/image-vector/drugs-motorbike-delivery-long-shadow-260nw-379459486.jpg"
-                                       width="20"> Place your order</button>
+
+            <div id="vueButton">
+            <button type="submit" id="orderButton" v-on:click="markDone (key)">
+                <img src="https://image.shutterstock.com/image-vector/drugs-motorbike-delivery-long-shadow-260nw-379459486.jpg"
+                     width="20">
+                Place your order
+            </button>
+            </div>
+
+
         </main>
     </body>
     <footer>

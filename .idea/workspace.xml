@@ -4,6 +4,7 @@
     <list default="true" id="d7a6960a-265d-454d-b048-99de588cf6db" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/js_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/js_script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/vue_script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/vue_script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,6 +53,11 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="menu.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/public/js/menu.js" working-dir="$PROJECT_DIR$/public/js">
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
