@@ -169,14 +169,14 @@ function getBoxValues(){
 
     }
 
-    return [{name: custName,
+    return {name: custName,
         email: custEmail,
         address: custAdress,
         phone: custPhone,
         payment: payMethod,
         addition_ino: addInfo,
         customer_sex: custSex,
-        selected_burger: selBurger}];
+        selected_burger: selBurger};
 }
 
 /* JSFiddle code for task 4-6

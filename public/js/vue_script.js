@@ -21,17 +21,8 @@ if(showVue) {
 }
 
 function buttonClicked() {
-    console.log("click");
-    let order = (name, email,
-                 address,
-                 phone,
-                 payment,
-                 addition_ino,
-                 customer_sex,
-                 selected_burger) => (getBoxValues);
-    let main = document.getElementById("main");
-    let orderDiv = document.createElement('div');
+    let order = getBoxValues();
+    let orderDiv = document.getElementById('orderDiv');
     let orderText = order.name + ", your order is a: " + order.selected_burger;
-    orderDiv.appendChild(document.createTextNode(orderText));
-    main.appendChild(orderDiv);
+    orderDiv.innerHTML = orderText;
 }
