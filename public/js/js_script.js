@@ -1,6 +1,6 @@
+/* Author: Oskar Areskog */
 
 let showJS = !true;
-
 
 function MenuItem (name, kCal, cG, cL, iV, src, box, imgAlt) {
     this.name = name + " burger";
@@ -47,12 +47,13 @@ let burgerSelection = document.getElementsByClassName("burger_selection");
 
 /* Create array of burgers */
 /**let burgers = [new MenuItem("the Hipster-Halloumi", 2500, true,false,false,"http://www.healthyfood.co.uk/wp-content/uploads/2016/06/Sprout-burger.jpg", "a"),
-                new MenuItem("the Eggplant", 2000, true, false, false, "http://misplacedbrit.com/wp-content/uploads/2014/06/IMG_8236.jpg", "b"),
-                new MenuItem("the Falafel-Halloumi", 5000, true, true, false,"https://fiitstyle.com/wp-content/uploads/2017/05/18361591_523757921346866_328414952_n.jpg", "c"),
-                new MenuItem("the Meat-is-not-murder", 5000, false, true, true,"http://wallpapersdsc.net/wp-content/uploads/2016/09/Burger-Images.jpg", "d"),
-                new MenuItem("the Ordinary", 3000, true, true, true, "https://static.beburger.be/img/home/intro-bg.jpg", "e")
-                ];
-**/
+ new MenuItem("the Eggplant", 2000, true, false, false, "http://misplacedbrit.com/wp-content/uploads/2014/06/IMG_8236.jpg", "b"),
+ new MenuItem("the Falafel-Halloumi", 5000, true, true, false,"https://fiitstyle.com/wp-content/uploads/2017/05/18361591_523757921346866_328414952_n.jpg", "c"),
+ new MenuItem("the Meat-is-not-murder", 5000, false, true, true,"http://wallpapersdsc.net/wp-content/uploads/2016/09/Burger-Images.jpg", "d"),
+ new MenuItem("the Ordinary", 3000, true, true, true, "https://static.beburger.be/img/home/intro-bg.jpg", "e")
+ ];
+ **/
+
 
 if(showJS) {
 // Create and add wrapper div
@@ -134,8 +135,6 @@ if(showJS) {
     //orderButton.onclick = buttonClicked;
     orderButton.onclick = getBoxValues;
 }
-
-
 
 function getBoxValues(){
     // Check which burger is selected
