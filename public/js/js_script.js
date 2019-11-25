@@ -152,7 +152,6 @@ function getBoxValues(){
     // Check textboxes
     let custName = document.getElementById("customer name").value;
     let custEmail = document.getElementById("customer email").value;
-    let custAdress = document.getElementById("customer address").value;
     let custPhone = document.getElementById("customer phone").value;
     let payMethod = document.getElementById("payment method").value;
     let addInfo = document.getElementById("additional information").value;
@@ -170,7 +169,6 @@ function getBoxValues(){
 
     return {name: custName,
         email: custEmail,
-        address: custAdress,
         phone: custPhone,
         payment: payMethod,
         addition_ino: addInfo,

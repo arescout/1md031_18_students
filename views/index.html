@@ -7,6 +7,7 @@
 
         <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/reset.css" >
         <link rel="stylesheet" type="text/css" href="http://localhost:3000/css/style.css" >
+        <link rel="stylesheet" href="http://localhost:3000/css/deli-very.css">
 
         <script src="https://vuejs.org/js/vue.js"></script>
 
@@ -14,6 +15,10 @@
 
         <script src="http://localhost:3000/js/js_script.js" defer></script>
         <script src="http://localhost:3000/js/vue_script.js" defer></script>
+
+        <script src="/vue/vue.js" defer></script>
+        <script src="/socket.io/socket.io.js" defer></script>
+        <script src="js/deli-very.js" defer></script>
     </head>
     <body>
         <main id="main">
@@ -27,7 +32,7 @@
                 <div> This is where you choose your burger</div>
 
                 <!-- Vue HTML code starts here -->
-                <template v-if="showVue" id="burgerWrapper">
+                <div v-if="showVue" id="burgerWrapper">
                 <div class="wrapper" >
                     <div v-for="burger in burgers" :class="burger.box">
                         <p>
@@ -48,7 +53,7 @@
                     </div>
 
                 </div>
-                </template>
+                </div>
 
 
                 <!--<div class="wrapper">
@@ -114,10 +119,9 @@
             </section>
 
             <!-- User input -->
-            <section>
+            <section id="form">
                 <h2> Customer information</h2>
                 <p> Please fill out the following form: </p>
-                <form>
                 <p>
                     <label for="customer name">Full name</label></br>
                     <input type="text" id="customer name" name="cn" required="required" placeholder="Your full name">
@@ -126,9 +130,8 @@
                     <label for="customer email">E-mail</label></br>
                     <input type="email" id="customer email" name="ce" required="required" placeholder="Your e-mail">
                 </p>
-                <p>
-                    <label for="customer address">Delivery address</label></br>
-                    <input type="text" id="customer address" name="ca" required="required" placeholder="Your delivery address">
+                <p id="delivery adress">
+
                 </p>
                 <p>
                     <label for="customer phone">Phone number</label></br>
@@ -159,12 +162,19 @@
                     <label for="gender undisc">Undisclosed</label>
                 </p>
 
+            <h1> Click in the map! </h1>
+            <a href="/dispatcher" target="_blank">Open dispatcher in new window</a>.
+            <div class="view-box">
+                <div id="dots" v-on:click="displayOrder">
+                    <div
+                            v-bind:style="{ left: orders.x + 'px', top: orders.y + 'px'}">
+                        T
+                    </div>
+                </div>
+            </div>
 
-                </form>
-            </section>
-
-            <div id="vueButton">
-            <button type="submit" id="orderButton" v-on:click="markDone (key)">
+            <div>
+            <button id="orderButton" v-on:click="addOrder">
                 <img src="https://image.shutterstock.com/image-vector/drugs-motorbike-delivery-long-shadow-260nw-379459486.jpg"
                      width="20">
                 Place your order
@@ -173,7 +183,7 @@
         <div id="orderDiv">
 
         </div>
-
+            </section>
         </main>
     </body>
     <footer>

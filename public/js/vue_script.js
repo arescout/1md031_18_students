@@ -1,8 +1,8 @@
 let showVue = true;
 let orderSent = false;
 
-let vm;
-vm = new Vue({
+let vmm;
+/* vm = new Vue({
     el: "#burgerWrapper",
     data() {
         return {
@@ -18,7 +18,7 @@ if(showVue) {
             markDone: buttonClicked
         }
     });
-}
+}*/
 
 function buttonClicked() {
     let order = getBoxValues();
