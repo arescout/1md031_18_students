@@ -11,16 +11,6 @@ var vm = new Vue({
     dotCoord: {},
   },
 
-  created: function () {
-    socket.on('initialize', function (data) {
-      this.orders = data.orders;
-    }.bind(this));
-
-    socket.on('currentQueue', function (data) {
-      this.orders = data.orders;
-    }.bind(this));
-  },
-
   methods: {
     getNext: function () {
       var lastOrder = Object.keys(this.orders).reduce(function (last, next) {
@@ -31,11 +21,16 @@ var vm = new Vue({
 
     addOrder: function () {
       console.log("addOrder");
+      this.orders = getBoxValues();
 
-      socket.emit("addOrder", { orderId: this.getNext(),
+      socket.emit("addOrder", { orderId: this.orders.name,
                                 details: this.dotCoord,
-                                orderItems: ["Beans", "Curry"]
+                                orderItems: [this.orders.selected_burger],
+                                orderGender: this.orders.customer_sex,
+                                orderEmail: this.orders.email,
+                                orderPaymentMethod: this.orders.payment
                               });
+      console.log(this.orders);
 
     },
 
