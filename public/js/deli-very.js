@@ -7,8 +7,9 @@ var socket = io();
 var vm = new Vue({
   el: '#form',
   data: {
-    orders: {},
-    dotCoord: {},
+      orderSent: true,
+      orderings: {},
+      dotCoord: {},
   },
 
   methods: {
@@ -20,24 +21,22 @@ var vm = new Vue({
     },
 
     addOrder: function () {
-      console.log("addOrder");
-      this.orders = getBoxValues();
-
-      socket.emit("addOrder", { orderId: this.orders.name,
+      this.orderings = getBoxValues();
+      this.orderSent = true;
+      socket.emit("addOrder", { orderId: this.orderings.name,
                                 details: this.dotCoord,
-                                orderItems: [this.orders.selected_burger],
-                                orderGender: this.orders.customer_sex,
-                                orderEmail: this.orders.email,
-                                orderPaymentMethod: this.orders.payment
+                                orderItems: [this.orderings.selected_burger],
+                                orderGender: this.orderings.customer_sex,
+                                orderEmail: this.orderings.email,
+                                orderPaymentMethod: this.orderings.payment
                               });
-      console.log(this.orders);
 
     },
 
     displayOrder: function (event) {
       let offset = {x: event.currentTarget.getBoundingClientRect().left,
                     y: event.currentTarget.getBoundingClientRect().top};
-      this.orders = { orderId: this.getNext(),
+      this.orderings = { orderId: this.getNext(),
                       x: event.clientX - 10 - offset.x,
                       y: event.clientY - 10 - offset.y,
                       orderItems: ["Beans", "Curry"]
