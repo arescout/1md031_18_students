@@ -59,7 +59,7 @@ Create a vue_script.js file which contains:
 - [X] A function that loads the information from the menu.js json object and inserts the information to the burger selection section of the index.html file
 - [X] Only displays allergy information if relevant (either only if it contains gluten or lactose, or only if it's gluten or lactose free)
 - [X] Add a checkbox to each menu item
-- [ ] A functionality for the order button that writes the information from the text boxes, the gender and all items on the order (that have the checkbox checked) to the bottom of the html file when the button is clicked
+- [X] A functionality for the order button that writes the information from the text boxes, the gender and all items on the order (that have the checkbox checked) to the bottom of the html file when the button is clicked
 
 ## 05 Messaging
 
@@ -74,6 +74,6 @@ Create a vue_script.js file which contains:
 - [X] Set the orderID on client side so one customer can make multiple orders
 - [ ] Only allow the order to be sent if all necessary information are provided
 - [ ] Display the order(s) on the customer page as well
-- [ ] Allow the dispatcher to handle orders by providing buttons next to every order that can switch the order status to "in preparation" and "done"
+- [X] Allow the dispatcher to handle orders by providing buttons next to every order that can switch the order status to "in preparation" and "done"
 - [ ] Display the order status to the customer and update it in the customer view if updated by the dispatcher
 - [ ] Find a better visualization for what orders belong to which location on the map

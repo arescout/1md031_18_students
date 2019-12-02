@@ -7,14 +7,14 @@ var socket = io();
 var vm = new Vue({
   el: '#form',
   data: {
-      orderSent: true,
+      orderSent: false,
       orderings: {},
       dotCoord: {},
   },
 
   methods: {
     getNext: function () {
-      var lastOrder = Object.keys(this.orders).reduce(function (last, next) {
+      var lastOrder = Object.keys(this.orderings).reduce(function (last, next) {
         return Math.max(last, next);
       }, 0);
       return lastOrder + 1;
@@ -28,7 +28,8 @@ var vm = new Vue({
                                 orderItems: [this.orderings.selected_burger],
                                 orderGender: this.orderings.customer_sex,
                                 orderEmail: this.orderings.email,
-                                orderPaymentMethod: this.orderings.payment
+                                orderPaymentMethod: this.orderings.payment,
+                                orderStatus: "order sent"
                               });
 
     },
@@ -44,5 +45,7 @@ var vm = new Vue({
       this.dotCoord = { x: event.clientX - 10 - offset.x,
                         y: event.clientY - 10 - offset.y };
       }
+
+
   }
 });

@@ -11,14 +11,7 @@ vmm = new Vue({
 
     }
 });
-if(showVue) {
-    new Vue({
-        el: "#vueButton",
-        methods: {
-            markDone: buttonClicked
-        }
-    });
-}
+if(showVue)
 
 function buttonClicked() {
     let order = getBoxValues();

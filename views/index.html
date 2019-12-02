@@ -55,69 +55,6 @@
                 </div>
                 </div>
 
-
-                <!--<div class="wrapper">
-                    <div class="box a">
-                        <p>the Hipster-Halloumi Burger</p>
-                        <img src="http://www.healthyfood.co.uk/wp-content/uploads/2016/06/Sprout-burger.jpg" alt="Halloumi Burger" title="Hipster Halloumi burger">
-                        <p class="protein_header">Protein</p>
-                        <span class="protein">
-                            <p>Halloumi</p>
-                        </span>
-                        </br>
-                        <p class="allergies_header">Allergies</p>
-                        <span class="allergies">
-                            <p>Milk protein</p>
-                            <p>Lactose</p>
-                            <p>Gluten</p>
-                            <p>Cucumber</p>
-                            <p>Pepper</p>
-                            <p>Gaspacho</p>
-                        </span>
-                    </div>
-
-                    <div class="box b">
-                        <p>Eggplant burger</p>
-                        <img src="http://misplacedbrit.com/wp-content/uploads/2014/06/IMG_8236.jpg" alt="Halloumi Burger" title="Eggplant Burger">
-                        <p class="protein_header">Protein</p>
-                        <span class="protein">
-                            <p>Halloumi</p>
-                            <p>Eggplant</p>
-                        </span>
-                        </br>
-                        <p class="allergies_header">Allergies</p>
-                        <span class="allergies">
-                            <p>Milk protein</p>
-                            <p>Lactose</p>
-                            <p>Gluten</p>
-                            <p>Cucumber</p>
-                            <p>Pepper</p>
-                            <p>Eggplant</p>
-                        </span>
-                    </div>
-
-                    <div class="box c">
-                        <p>Falafel-Halloumi Burger</p>
-                        <img src="https://fiitstyle.com/wp-content/uploads/2017/05/18361591_523757921346866_328414952_n.jpg" alt="Falafel and Halloumi Burger" title="Hipster Halloumi burger">
-                        <p class="protein_header">Protein</p>
-                        <span class="protein">
-                            <p>Halloumi</p>
-                            <p>Chick pea</p>
-                        </span>
-                        </br>
-                        <p class="allergies_header">Allergies</p>
-                        <span class="allergies">
-                            <p>Milk protein</p>
-                            <p>Lactose</p>
-                            <p>Gluten</p>
-                            <p>Cucumber</p>
-                            <p>Pepper</p>
-                            <p>Chick pea</p>
-                        </span>
-                    </div>
-                </div>-->
-            </section>
-
             <!-- User input -->
             <section id="form">
                 <h2> Customer information</h2>
@@ -139,7 +76,7 @@
                 </p>
                 <p>
                     <label for="payment method">Payment method</label></br>
-                    <select id="payment method" name="pm">
+                    <select id="payment method" name="pm" required>
                         <option>Swish</option>
                         <option>Klarna</option>
                         <option>Credit card</option>
@@ -167,7 +104,7 @@
             <div class="view-box">
                 <div id="dots" v-on:click="displayOrder">
                     <div
-                            v-bind:style="{ left: orders.x + 'px', top: orders.y + 'px'}">
+                            v-bind:style="{ left: orderings.x + 'px', top: orderings.y + 'px'}">
                         T
                     </div>
                 </div>
@@ -179,12 +116,9 @@
                      width="20">
                 Place your order
             </button>
-            </div><p></p>
+            </div>
                 <div v-if="orderSent">
-
-                    Nu syns jag
-                    #{{}}
-
+                    {{this.orderings.name}}, your order is {{this.orderings.selected_burger}}, your email is {{this.orderings.email}} and your are a {{this.orderings.customer_sex}}.
                 </div>
             </section>
 
